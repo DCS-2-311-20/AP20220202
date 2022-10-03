@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> 応用プログラミング 課題2.2 (array02)
+		</title>
+	</head>
+	<body>
+		<h1> 応用プログラミング 課題2.2 (array02) </h1>
+		<p id="msg"> JavaScript の出力はコンソールに表示される．</p>
+    		<script>
+				"use strict";
+				// 文字の配列を表示する関数
+				function display( a ) {
+				  const h = a.length;
+				  const w = a[0].length;
+				  let output = "";
+				  for (let i = 0; i < h; i++ ) {
+				    for (let j = 0; j < w; j++) {
+				      output += a[i][j];
+				    }
+				    output += "\n";
+				  }
+				  console.log(output);
+				}
+				// 回転させるつもりが鏡像になってしまった関数
+				function rotate( a ) {
+				  const h = a.length;
+				  const w = a[0].length;
+				  const b = [];
+				  for (let i = 0; i < h; i++ ) {
+				    b[i] = [];
+				    for (let j = 0; j < w; j++ ) {
+				      b[i].push(a[i][(w - j - 1)]);
+				    }
+				  }
+				  return b;
+				}
+				// 文字の配列の宣言
+				const R = [
+				  ["*","*","*","*","*","*"," "," ",],
+				  ["*","*"," "," "," ","*","*"," ",],
+				  ["*","*"," "," "," ","*","*"," ",],
+				  ["*","*","*","*","*","*"," "," ",],
+				  ["*","*"," ","*","*"," "," "," ",],
+				  ["*","*"," "," ","*","*"," "," ",],
+				  ["*","*"," "," "," ","*","*"," ",],
+				  ["*","*"," "," "," "," ","*","*",],
+				];
+				// 元の配列の表示
+				display( R );
+				// 配列を90度右に回転
+				const RR = rotate( R );
+				// 回転後の配列の表示
+				display( RR );
+				</script>
+	</body>
+</html>
