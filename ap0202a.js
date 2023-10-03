@@ -3,10 +3,9 @@
 const element = document.getElementById("msg");
 
 // 変数の宣言
-const n = 5;
-let sum = 0;
+n = 5;
 // ループ
-for (let i = 1; i <= n; i++) {
+for (i = 1; i <= n; i++) {
   // i番目までの合計を計算する
   sum = sum + i;
 }
